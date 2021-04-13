@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import React from "react";
+import {Link} from "react-router-dom";
+import Header from "./header";
 function Events() {
 
   const [event, setData] = useState([]);
@@ -18,9 +20,9 @@ function Events() {
 
   return (
 
+<div><Header/>
 
       <main id="main" data-aos="fade-in">
-
 
           <div className="breadcrumbs">
               <div className="container">
@@ -42,14 +44,14 @@ function Events() {
                                                 <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
 
                           <div className="course-item">
-                              <img src="{c.image}" className="img-fluid" alt="..."/>
+                              <img src="{c.image.url}" className="img-fluid" alt="..."/>
                                   <div className="course-content">
                                       <div className="d-flex justify-content-between align-items-center mb-3">
                                           <h4>Content</h4>
                                           <p className="price">$180</p>
                                       </div>
 
-                                      <h3><a href="course-details.html">Copywriting</a></h3>
+                                      <h3><Link to = {{pathname: `/event`, fromDashboard: false}} > {c.date}</Link></h3>
                                       <p>{c.name}</p>
                                       <div className="trainer d-flex justify-content-between align-items-center">
                                           <div className="trainer-profile d-flex align-items-center">
@@ -76,7 +78,7 @@ function Events() {
 
 
       </main>
-
+</div>
 
   );
 }

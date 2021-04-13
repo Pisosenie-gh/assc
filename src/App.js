@@ -20,12 +20,12 @@ import Forms from "./Components/forms";
 function App() {
   return (
 <div>
- <Header/>
+
 
                       <Router>
                           <Switch>
                             <Link exact path = "/" component={Section} />
-                              <Link exact path = "/about" component={About} />
+                              <Link exact path = "/about" exact component={About} />
                                <Link exact path = "/events" component={Events} />
                               <Link exact path = "/event" component={Event_detail} />
                                 <Link exact path = "/treners" component={Treners} />
@@ -35,6 +35,7 @@ function App() {
 
                           </Switch>
                       </Router>
+
 
     <Footer/>
 </div>

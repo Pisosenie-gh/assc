@@ -1,11 +1,17 @@
 
 
 import React from "react";
+import {Link} from "react-router-dom";
+import Header from "./header";
 function Treners() {
   return (
 
+      <div>
+<Header/>
 
-      <main id="main" data-aos="fade-in">
+
+    <main id="main" data-aos="fade-in">
+
 
 
           <div className="breadcrumbs">
@@ -88,6 +94,7 @@ function Treners() {
 
 
       </main>
+          </div>
 
 );
 }

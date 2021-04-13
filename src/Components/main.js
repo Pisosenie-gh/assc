@@ -1,11 +1,48 @@
 import 'react-bootstrap'
+import {BrowserRouter as Router, Link, Switch} from "react-router-dom";
+import React from "react";
 function Section() {
   return (
 <div>
+   <header id="header" className="fixed-top">
+          <div className="container d-flex align-items-center">
+
+              <h1 className="logo me-auto"><a href="/">Mentor</a></h1>
+
+              <nav id="navbar" className="navbar order-last order-lg-0">
+                  <ul>
+
+
+                      <nav id="navbar" className="navbar order-last order-lg-0">
+                          <ul>
+                              <li><a className="active" href="/">Home</a></li>
+
+                             <li><Link to = {{pathname: `/about`, fromDashboard: false}} >About</Link></li>
+
+
+                            <li><Link to = {{pathname: `/events`, fromDashboard: false}} >Courses</Link></li>
+                            <li><Link to = {{pathname: `/treners`, fromDashboard: false}} >Trainers</Link></li>
+                            <li><Link to = {{pathname: `/contacts`, fromDashboard: false}} >Contacts</Link></li>
+                            <li><Link to = {{pathname: `/forms`, fromDashboard: false}} >Pricing</Link></li>
+                          </ul>
+                      </nav>
+
+
+                  </ul>
+                  <i className="bi bi-list mobile-nav-toggle"></i>
+              </nav>
+
+
+              <a href="courses.html" className="get-started-btn">Get Started</a>
+
+          </div>
+      </header>
+
   <section id="hero" className="d-flex justify-content-center align-items-center">
     <div className="container position-relative" data-aos="zoom-in" data-aos-delay="100">
       <h1>Learning Today,<br/>Leading Tomorrow</h1>
       <h2>We are team of talented designers making websites with Bootstrap</h2>
+
       <a href="courses.html" className="btn-get-started">Get Started</a>
     </div>
   </section>

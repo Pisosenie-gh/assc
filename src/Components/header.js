@@ -8,41 +8,33 @@ import {
     useLocation,
     Route, Redirect
 } from "react-router-dom";
+import About from "./about";
 function Header() {
   return (
-      <header id="header" className="fixed-top">
+             <header id="header" className="fixed-top">
           <div className="container d-flex align-items-center">
 
-              <h1 className="logo me-auto"><a href="index.html">Mentor</a></h1>
+              <h1 className="logo me-auto"><a href="/">Mentor</a></h1>
 
               <nav id="navbar" className="navbar order-last order-lg-0">
                   <ul>
 
-                      <Router>
-                          <Switch>
-                            <Link exact path = "/test" component={Test} />
-                          </Switch>
-                      </Router>
 
-                      <li className="dropdown"><a href="#"><span>Drop Down</span> <i className="bi bi-chevron-down"></i></a>
+                      <nav id="navbar" className="navbar order-last order-lg-0">
                           <ul>
-                              <li><a href="#">Drop Down 1</a></li>
-                              <li className="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                                  className="bi bi-chevron-right"></i></a>
-                                  <ul>
-                                      <li><a href="/about">Deep Drop Down 1</a></li>
-                                      <li><a href="#">Deep Drop Down 2</a></li>
-                                      <li><a href="#">Deep Drop Down 3</a></li>
-                                      <li><a href="#">Deep Drop Down 4</a></li>
-                                      <li><a href="#">Deep Drop Down 5</a></li>
-                                  </ul>
-                              </li>
-                              <li><a href="#">Drop Down 2</a></li>
-                              <li><a href="#">Drop Down 3</a></li>
-                              <li><a href="#">Drop Down 4</a></li>
+                              <li><a className="active" href="/">Home</a></li>
+
+                             <li><Link to = {{pathname: `/about`, fromDashboard: false}} >About</Link></li>
+
+
+                            <li><Link to = {{pathname: `/events`, fromDashboard: false}} >Courses</Link></li>
+                            <li><Link to = {{pathname: `/treners`, fromDashboard: false}} >Trainers</Link></li>
+                            <li><Link to = {{pathname: `/contacts`, fromDashboard: false}} >Contacts</Link></li>
+                            <li><Link to = {{pathname: `/forms`, fromDashboard: false}} >Pricing</Link></li>
                           </ul>
-                      </li>
-                      <li><a href="/about">Contact</a></li>
+                      </nav>
+
+
                   </ul>
                   <i className="bi bi-list mobile-nav-toggle"></i>
               </nav>
